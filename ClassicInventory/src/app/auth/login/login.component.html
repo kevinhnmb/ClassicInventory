@@ -1,0 +1,39 @@
+<form class="form-signin" [formGroup]="myForm">
+    
+    <div class="row">
+      <div class="col text-center">
+        <h1 class="h3 mb-3 font-weight-normal d-flex justify-content-center">Classic Inventory</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col text-center">
+        <h4 class="h4 mb-4 font-weight-normal d-flex justify-content-center">Login</h4>
+      </div>
+    </div>
+
+    <div *ngIf="authError"class="alert alert-danger" role="alert">
+        {{ authError?.message }}
+    </div>
+
+    <label for="email" class="sr-only">Email address</label>
+    <input type="email" formControlName="email" class="form-control" placeholder="Email address" required autofocus>
+    
+    <label for="password" class="sr-only">Password</label>
+    <input type="password" formControlName="password" class="form-control" placeholder="Password" required>
+    
+        
+    <div class="row">
+      <div class="col text-center">
+        <button type="submit" class="btn btn-lg btn-primary btn-block" (click)="login(myForm)">Sign in</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col text-center">
+          <button type="button" class="btn btn-link" (click)="register()">Register</button>
+      </div>
+    </div>
+
+    <p class="mt-5 mb-3 text-muted d-flex justify-content-center">&copy; 2020-2021</p>
+</form>

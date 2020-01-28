@@ -1,0 +1,33 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    
+    <th scope="col" sortable="name" (sort)="onSort($event)">Item Code</th>
+    <th scope="col" sortable="area" (sort)="onSort($event)">User Name</th>
+    <th scope="col">Quantity</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let current of items | async">
+    <th scope="row">{{ current.item_code }}</th>
+    <td>
+      {{ current.display_name }}
+    </td>
+    <td>{{ current.item_quantity }}</td>
+  </tr>
+  </tbody>
+</table>
+
+<select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (change)="refreshTableSize()">
+  <option [ngValue]="2">2 items per page</option>
+  <option [ngValue]="4">4 items per page</option>
+  <option [ngValue]="6">6 items per page</option>
+</select>
+
+<div *ngIf="firstPage; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock><button type="button" class="btn btn-link" (click)="getPreviousItems(this.pageSize, this.firstElement)" disabled>Previous</button></ng-template>
+<ng-template #elseBlock><button type="button" class="btn btn-link" (click)="getPreviousItems(this.pageSize, this.firstElement)">Previous</button></ng-template>
+
+
+<button type="button" class="btn btn-link" (click)="getNextItems(this.pageSize, this.lastElement)">Next</button>

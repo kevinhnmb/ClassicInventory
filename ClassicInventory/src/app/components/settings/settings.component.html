@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="py-5 text-center">
+        <!--<img class="d-block mx-auto mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">-->
+        <h2>User Settings</h2>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 order-md-1">
+            <h4 class="mb-3">Account Information</h4>
+
+            <form class="needs-validation" novalidate [formGroup]="myForm">
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName">First Name</label>
+        
+                        <input type="text" id="firstName" formControlName="firstName" class="form-control" placeholder="" value="">
+
+                        <div class="invalid-feedback">
+                            Valid first name is required.
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" formControlName="lastName" class="form-control" placeholder="" value="">
+                        <div class="invalid-feedback">
+                            Valid last name is required.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" formControlName="email" class="form-control" placeholder="" value="">
+                    <div class="invalid-feedback">
+                        Please valid email address.
+                    </div>
+                </div>      
+
+                <hr class="mb-4">
+
+                <div class="mb-6">
+                    <label for="oldPassword">Old Password</label>
+                    <input type="password" id="oldPassword" formControlName="oldPassword" class="form-control">
+                    <div class="invalid-feedback">
+                        Valid password is required.
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName">New Password</label>
+                        <input type="password" id="newPassword" formControlName="newPassword" class="form-control">
+                        <div class="invalid-feedback">
+                            Valid password is required.
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="lastName">Confirm New Password</label>
+                        <input type="password" id="confirmNewPassword" formControlName="confirmNewPassword" class="form-control">
+                        <div class="invalid-feedback">
+                            Valid password is required.
+                        </div>
+                    </div>
+                </div>
+
+
+                <button class="btn btn-success btn-lg btn-block" type="submit" (click)="submit(myForm)">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

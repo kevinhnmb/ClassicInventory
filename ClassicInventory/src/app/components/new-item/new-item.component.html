@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="py-5 text-center">
+        <!--<img class="d-block mx-auto mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">-->
+        <h2>New Item Form</h2>
+        <p class="lead">Please fill in information below.</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 order-md-1">
+            <h4 class="mb-3">Item Information</h4>
+
+            <form class="needs-validation" novalidate [formGroup]="myForm">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="itemCode">Item Code</label>
+        
+                        <input type="text" id="itemCode" formControlName="itemCode" class="form-control" [ngbTypeahead]="search" [resultFormatter]="resultFormatterCodes" [inputFormatter]="inputFormatterCodes"/>
+
+                        <div class="invalid-feedback">
+                            Valid item code is required.
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="itemName">Item Name</label>
+                        <input type="text" id="itemNameInput" class="form-control" placeholder="" value="">
+                        <div class="invalid-feedback">
+                            Valid last item name is required.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label for="address">Quantity</label>
+                    <input class="form-control" type="number" value="0" formControlName="itemQuantity" required>
+                    <div class="invalid-feedback">
+                        Please enter your shipping address.
+                    </div>
+                </div>      
+
+                <hr class="mb-4">
+                <button class="btn btn-success btn-lg btn-block" type="submit" (click)="submit(myForm)">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

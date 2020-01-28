@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">Classic Inventory</a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <button type="button" class="btn btn-dark" (click)="newButton()">New</button>
+            </li>
+
+            <li class="nav-item">
+                <button type="button" class="btn btn-dark" (click)="viewAllButton()">View All</button>
+            </li>
+
+            <li class="nav-item">
+                <button type="button" class="btn btn-dark" (click)="logsButton()">Logs</button>
+            </li>
+
+            <li class="nav-item">
+                <button type="button" class="btn btn-dark" (click)="settingsButton()">Settings</button>
+            </li>
+
+            <li class="nav-item">
+                <button type="button" class="btn btn-dark" (click)="uploadInventoryButton()">Upload Inventory</button>
+            </li>
+        </ul>
+
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <button type="button" class="btn btn-dark" (click)="signOut()">Sign Out</button>
+        </form>
+    </div>
+</nav>
+
+<main role="main" class="container">
+    <div *ngIf="newFlag" class="content">
+        <app-new-item></app-new-item>
+    </div>
+
+    <div *ngIf="viewAllFlag" class="content">
+        <app-view-all></app-view-all>
+    </div>
+
+    <div *ngIf="logsFlag" class="content">
+        <app-logs></app-logs>
+    </div>
+
+    <div *ngIf="settingsFlag" class="content">
+        <app-settings></app-settings>
+    </div>
+
+    <div *ngIf="uploadInventoryFlag" class="content">
+        <app-inventory-import></app-inventory-import>
+    </div>
+</main>
+

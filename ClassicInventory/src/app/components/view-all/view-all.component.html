@@ -1,0 +1,22 @@
+<p>TESTING, not showing all items. Only items starting with ST.</p>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    
+    <th scope="col" sortable="name" (sort)="onSort($event)">Item Code</th>
+    <th scope="col" sortable="area" (sort)="onSort($event)">Name</th>
+    <th scope="col">Quantity</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let currentItem of items | async">
+    <th scope="row">{{ currentItem.item_code }}</th>
+    <td>
+      {{ currentItem.item_name }}
+    </td>
+    <td>1</td>
+  </tr>
+  </tbody>
+</table>
